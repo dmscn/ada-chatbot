@@ -1,0 +1,15 @@
+{
+  "name": "ada_chatbot",
+  "version": "1.0.0",
+  "description": "Ada é a chatbot da Faeterj-Rio criada para atender a alunos e pessoas buscando informações sobre a faculdade.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Damasceno",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
