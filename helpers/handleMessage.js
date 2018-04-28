@@ -3,9 +3,9 @@ const callSendApi = require('../controllers/callSendApi');
 
 module.exports = (sender_psid, received_message) => {
 
-  if(webhook_event.message.text) {
+  if(received_message.message.text) {
     response = {
-      'text': `Received. ${JSON.stringify(webhook_event)}`
+      'text': `Received. ${JSON.stringify(received_message)}`
     }
   }
 

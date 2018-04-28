@@ -9,7 +9,9 @@ module.exports = (req, res) => {
 	if(body.object === 'page') {
 
 		body.entry.forEach(entry => {
-      let webhook_event = entry.messaging[0];
+
+			let webhook_event = entry.messaging[0];
+			
       console.log("WebHook Event: ", webhook_event);
 
       let sender_psid = webhook_event.sender.id;
