@@ -8,18 +8,23 @@ app.use(bodyParser.urlencoded({ extended : false }));
 
 app.listen(process.env.PORT || 5000, () => console.log('Webhook server is listening'));
 
+const PAGE_ACCESS_TOKEN = "EAARwOZB1nYnkBAIZCr7ZBljyqhjGme1nwZBoMS1eVREzEg2YqFNyeJHAxiYjz1EmhHzm9LYauUNLFd8wyuN11JOkhNUx4yGePeAdFeJ82nY9yUHklpGyxfC0xXLQIbPA9Y1ug6ELHIAG93I18dGrnXPlPCuh7ZBtgIcwmWDqnxQZDZD";
+
 app.get('/', (req, res) => {
-  res.status(200).send('Hello');
+  res.send('App working');
 });
 
+// webhook point
 app.post('/webhook', (req, res) => {
 
   let body = req.body;
 
+  console.log("request body => ", req.body);
+
   if(body.object === 'page') {
     body.entry.forEach(entry => {
       let webhook_event = entry.messaging[0];
-      console.log(webhook_event);      
+      console.log(webhook_event);
     });
 
     res.status(200).send('EVENT_RECEIVED');
@@ -29,6 +34,8 @@ app.post('/webhook', (req, res) => {
 
 });
 
+
+// webhook verification
 app.get('/webhook', (req, res) => {
   
   let VERIFY_TOKEN = "ada&faeterj-rio";
