@@ -1,9 +1,8 @@
 
-import webhookVerification from './controllers/verification';
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const webhookValidation = require('./controllers/verification');
 
 const app = express();
 
