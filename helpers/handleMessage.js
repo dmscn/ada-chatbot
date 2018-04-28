@@ -3,7 +3,7 @@ const callSendApi = require('../controllers/callSendApi');
 
 module.exports = (sender_psid, received_message) => {
 
-  if(received_message.message.text) {
+  if(received_message.text) {
     response = {
       'text': `Received. ${JSON.stringify(received_message)}`
     }
