@@ -1,17 +1,18 @@
-module.exports = (req, res) => {
+export default (req, res) => {
+  
+  let VERIFY_TOKEN = "ada&faeterj-rio";
 
-	const hubChallenge = req.query['hub.challenge'];
+  let mode = req.query['hub.mode'];
+  let token = req.query['hub.verify_token'];
+  let challange = req.query['hub.challenge'];
 
-	const hubMode = req.query['hub.mode'];
-	const verifyTokenMatches = (req.query['hub.verify_token'] === 'ada&faeterj-rio');
-
-	if(hubMode && verifyTokenMatches) {
-		
-		res.status(200).send(hubChallenge);
-
-	} else {
-
-		res.status(403).end();
-		
-	}
+  if(mode && token) {
+    if(mode === 'subscribe' && token === VERIFY_TOKEN) {
+      console.log('WEBHOOK_VERIFIED');
+      res.status(200).send(challange);
+    } else {
+      // 403 Forbidden
+      res.sendStatus(403).end();
+    }
+  }
 }
