@@ -39,7 +39,7 @@ app.post('/webhook', (req, res) => {
         // handleMessage(sender_psid, webhook_event.message);
         if(webhook_event.message.text) {
           response = {
-            'text': `Received. ${webhook_event}`
+            'text': `Received. ${JSON.stringify(webhook_event)}`
           }
         }
 
