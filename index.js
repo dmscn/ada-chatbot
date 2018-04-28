@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended : false }));
 app.listen(process.env.port || 1337, () => console.log('Webhook server is listening'));
 
 app.get('/', (req, res) => {
-  res.send('Hello');
+  res.status(200).send('Hello');
 });
 
 app.post('/webhook', (req, res) => {
