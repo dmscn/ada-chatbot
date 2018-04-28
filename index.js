@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : false }));
 
-app.listen(process.env.port || 1337, () => console.log('Webhook server is listening'));
+app.listen(process.env.port || 5000, () => console.log('Webhook server is listening'));
 
 app.get('/', (req, res) => {
   res.status(200).send('Hello');
