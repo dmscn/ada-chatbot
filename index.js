@@ -1,8 +1,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const request = require('request');
-const webhookValidation = require('./controllers/verification');
+const request = require("request");
+const webhookValidation = require('./controllers/verification.js');
 
 const app = express();
 
